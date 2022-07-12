@@ -12,12 +12,13 @@ import java.util.Optional;
 public class BookRepositoryImpl implements BookRepository {
     @Override
     public List<Book> findAll() {
-        return DataHolder.generateBooks();
+        DataHolder.resetId();
+        return DataHolder.generateBooks;
     }
 
     @Override
     public Optional<Book> findByAuthorName(String authorName) {
-        return DataHolder.generateBooks().stream()
+        return DataHolder.generateBooks.stream()
                 .filter(book -> book.getAuthor().getName().equals(authorName))
                 .findFirst();
     }

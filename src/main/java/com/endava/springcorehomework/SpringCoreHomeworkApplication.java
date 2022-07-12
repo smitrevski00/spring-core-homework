@@ -21,7 +21,7 @@ public class SpringCoreHomeworkApplication {
         System.out.println("Books: ");
         bookService.listAll().forEach(System.out::println);
 
-        System.out.println("Books by author with the name Marko");
+        System.out.println("Books by author with the name Marko:");
         System.out.println(bookService.findByAuthorName("Marko").isPresent()
                 ? bookService.findByAuthorName("Marko").get()
                 : "No book by the author Marko");

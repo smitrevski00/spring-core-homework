@@ -12,6 +12,7 @@ public class AuthorRepositoryImpl implements AuthorRepository {
 
     @Override
     public List<Author> findAll() {
-        return DataHolder.generateAuthors();
+        DataHolder.resetId();
+        return DataHolder.generateAuthors;
     }
 }

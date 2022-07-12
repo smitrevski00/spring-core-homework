@@ -7,7 +7,6 @@ import java.math.BigDecimal;
 
 @AllArgsConstructor
 @Data
-@ToString
 @Builder
 public class Book {
     private Long id;
@@ -24,7 +23,9 @@ public class Book {
         this.author = author;
     }
 
-    public Book() {
-        this.id = DataHolder.idGenerator();
+    @Override
+    public String toString() {
+        return String.format("ID: %d\nTitle: %s\nNum. pages: %d\nPrice: %s\nAuthor: %s\n",
+                id, title, numberOfPages, price, author.getFullName());
     }
 }

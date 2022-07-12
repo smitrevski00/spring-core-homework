@@ -7,7 +7,6 @@ import java.time.LocalDate;
 
 @AllArgsConstructor
 @Data
-@ToString
 @Builder
 public class Author {
     private Long id;
@@ -24,7 +23,13 @@ public class Author {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public Author() {
-        this.id = DataHolder.idGenerator();
+    @Override
+    public String toString() {
+        return String.format("ID: %d\nName: %s\nSurname: %s\nCountry: %s\nDate of birth: %s\n",
+                id, name, surname, country, dateOfBirth);
+    }
+
+    public String getFullName() {
+        return name + " " + surname;
     }
 }

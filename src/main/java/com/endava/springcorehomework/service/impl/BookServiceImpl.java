@@ -3,7 +3,6 @@ package com.endava.springcorehomework.service.impl;
 import com.endava.springcorehomework.models.Book;
 import com.endava.springcorehomework.repository.BookRepository;
 import com.endava.springcorehomework.service.BookService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
